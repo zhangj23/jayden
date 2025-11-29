@@ -15,18 +15,18 @@ import {
 
 const experiences = [
   {
-    id: "rush-chair",
-    title: "Rush Chair",
+    id: "fundraising-chair",
+    title: "Fundraising Chair + Rush Team",
     organization: "Lambda Phi Epsilon",
     type: "Leadership",
     period: "Fall 2025 - Present",
-    description: "Recruitment Strategy & Event Management",
+    description: "Financial Strategy & Recruitment Support",
     details: [
-      "Managed the recruitment pipeline for the Fall 2025 class, analyzing retention metrics to optimize bid acceptance rates",
-      "Organized large-scale engagement events, coordinating logistics and budget allocation for 50+ prospective members",
-      "Implemented a new mentorship structure to improve new member integration and long-term organizational retention",
+      "Spearheaded fundraising initiatives, developing strategic campaigns to secure chapter funding and operational resources",
+      "Managed budget allocation and financial planning for fraternity events and organizational expenses",
+      "Collaborated with the Rush Team to coordinate recruitment events and engage with 50+ prospective members",
     ],
-    skills: ["Event Planning", "Team Leadership", "Analytics", "Outreach"],
+    skills: ["Fundraising", "Budget Management", "Team Collaboration", "Event Planning"],
     icon: Users,
     color: "from-amber-500 to-orange-600",
   },

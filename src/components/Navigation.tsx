@@ -87,7 +87,7 @@ export default function Navigation() {
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.href.slice(1);
@@ -137,7 +137,7 @@ export default function Navigation() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-lg text-text-muted hover:text-foreground hover:bg-surface-elevated transition-all"
+                className="lg:hidden p-2 rounded-lg text-text-muted hover:text-foreground hover:bg-surface-elevated transition-all"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -154,7 +154,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-16 z-40 md:hidden glass border-b border-border"
+            className="fixed inset-x-0 top-16 z-40 lg:hidden glass border-b border-border"
           >
             <div className="px-4 py-4 space-y-1">
               {navItems.map((item) => {

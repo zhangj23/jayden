@@ -185,14 +185,14 @@ export default function About() {
                   <h3 className="font-bold">Lambda Phi Epsilon</h3>
                   <div className="flex items-center gap-2 mt-1">
                     <Award className="w-4 h-4 text-accent" />
-                    <span className="text-sm text-accent font-medium">Rush Chair</span>
+                    <span className="text-sm text-accent font-medium">Fundraising Chair + Rush Team</span>
                   </div>
                 </div>
               </div>
               <p className="text-sm text-text-muted leading-relaxed">
-                Leading recruitment strategy and event management. Managing the
-                recruitment pipeline, organizing large-scale engagement events, and
-                analyzing retention metrics to build a stronger chapter.
+                Leading fundraising initiatives and financial strategy while supporting
+                recruitment efforts. Managing budget allocation for chapter operations
+                and collaborating with the Rush Team on engagement events.
               </p>
             </motion.div>
 
