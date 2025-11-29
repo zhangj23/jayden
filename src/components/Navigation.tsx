@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import {
   Home,
   User,
@@ -79,14 +78,8 @@ export default function Navigation() {
               className="flex items-center gap-2 group"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="w-10 h-10 rounded-lg overflow-hidden">
-                <Image
-                  src="/logo.jpg"
-                  alt="Jayden Zhang"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-emerald-400 flex items-center justify-center">
+                <span className="text-background font-bold text-lg">J</span>
               </div>
               <span className="font-semibold text-lg hidden sm:block">
                 <span className="text-accent">Jayden</span>

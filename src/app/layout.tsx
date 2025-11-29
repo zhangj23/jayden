@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   description: "B.S. Business Administration (Finance & Real Estate) at University at Buffalo. Specializing in Real Estate Market Analysis and Equity Strategy. Exploring markets, visualizing growth, building communities.",
   keywords: ["Real Estate", "Finance", "Business", "University at Buffalo", "Market Analysis", "Investment", "Jayden Zhang"],
   authors: [{ name: "Jayden Zhang" }],
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Jayden Zhang | Business & Finance Portfolio",
     description: "B.S. Business Administration (Finance & Real Estate) at University at Buffalo. Specializing in Real Estate Market Analysis and Equity Strategy.",
