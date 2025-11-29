@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import {
   Mail,
   Linkedin,
@@ -9,11 +9,29 @@ import {
   MapPin,
   Calendar,
   ArrowUpRight,
+  Copy,
+  Check,
 } from "lucide-react";
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("jaydenzhang30@gmail.com");
+      setEmailCopied(true);
+      setShowToast(true);
+      setTimeout(() => {
+        setEmailCopied(false);
+        setShowToast(false);
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  };
 
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32 gradient-bg overflow-hidden">
@@ -49,19 +67,23 @@ export default function Contact() {
             <div className="bg-surface rounded-2xl border border-border p-6">
               <h3 className="text-lg font-semibold mb-6">Quick Connect</h3>
               <div className="space-y-4">
-                <a
-                  href="mailto:jaydenzhang30@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-xl bg-surface-elevated border border-border hover:border-accent transition-all group"
+                <button
+                  onClick={copyEmail}
+                  className="w-full flex items-center gap-4 p-4 rounded-xl bg-surface-elevated border border-border hover:border-accent transition-all group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                     <Mail className="w-5 h-5 text-accent" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 text-left">
                     <p className="font-medium">Email</p>
                     <p className="text-sm text-text-muted">jaydenzhang30@gmail.com</p>
                   </div>
-                  <ArrowUpRight className="w-5 h-5 text-text-muted group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                </a>
+                  {emailCopied ? (
+                    <Check className="w-5 h-5 text-accent" />
+                  ) : (
+                    <Copy className="w-5 h-5 text-text-muted group-hover:text-accent transition-all" />
+                  )}
+                </button>
 
                 <a
                   href="https://www.linkedin.com/in/jayden-zhang-4b3367342/"
@@ -183,6 +205,29 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
+          >
+            <div className="bg-surface-elevated border border-accent/30 rounded-xl px-6 py-4 shadow-lg flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
+                <Check className="w-5 h-5 text-accent" />
+              </div>
+              <div>
+                <p className="font-semibold text-sm">Email copied!</p>
+                <p className="text-xs text-text-muted">jaydenzhang30@gmail.com</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
