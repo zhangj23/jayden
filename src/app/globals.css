@@ -170,23 +170,31 @@ body {
 
 /* Map container styles */
 .leaflet-container {
-  background: var(--surface) !important;
+  background: #f5f5f5 !important;
   border-radius: 8px;
-}
-
-.leaflet-tile-pane {
-  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  font-family: inherit;
 }
 
 .leaflet-popup-content-wrapper {
-  background: var(--surface-elevated) !important;
-  color: var(--foreground) !important;
+  background: #ffffff !important;
+  color: #1a1d26 !important;
   border-radius: 8px !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
 }
 
 .leaflet-popup-tip {
-  background: var(--surface-elevated) !important;
+  background: #ffffff !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #6b7280 !important;
+  font-size: 10px !important;
+  padding: 2px 5px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #059669 !important;
 }
 
 /* Metric card hover effect */
